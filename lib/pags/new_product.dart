@@ -29,8 +29,8 @@ class _NewProductState extends State<NewProduct> {
         body: SingleChildScrollView(
           child: Container(
             //main
-            height: double.infinity,
-            width: double.infinity,
+            height: screenHeight,
+            width: screenWidth,
             child: Column(
               children: <Widget>[
                 Container(
@@ -98,7 +98,7 @@ class _NewProductState extends State<NewProduct> {
                       Padding(
                         padding: const EdgeInsets.only(top: 8,left: 23),
                         child: Text(
-                          'Category',
+                          'Catergory',
                           style: TextStyle(
                             fontSize: 15
                           ),
@@ -117,9 +117,9 @@ class _NewProductState extends State<NewProduct> {
                                 elevation: 0,
                                 hint: Text('Please Choose a Category'),
                                 value: _dropSelectedItem,
-                                onChanged: (_){
+                                onChanged: (val){
                                   setState(() {
-                                    _dropSelectedItem = _;
+                                    _dropSelectedItem = val;
                                   });
                                 },
                                 items: dropdownItem.map((item){
