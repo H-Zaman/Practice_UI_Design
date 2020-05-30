@@ -1,3 +1,4 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:examflutterapp/pags/Card.dart';
 import 'package:examflutterapp/pags/models/withdraw.dart';
 import 'package:flutter/cupertino.dart';
@@ -82,7 +83,6 @@ class _MoneyState extends State<Money> {
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(left: 15),
-                                //TODO: dotted border
                                 child: Text(
                                   '\$234.30',
                                   style: TextStyle(
@@ -141,43 +141,48 @@ class _MoneyState extends State<Money> {
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 4),
-                            child: TextFormField(
-                              textAlign: TextAlign.center,
-                              decoration: InputDecoration(
-                                fillColor: Colors.white,
-                                filled: true,
-                                hintText: 'Enter Amount',
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    width: 1.0,
-                                    color: Colors.grey[200]
+                            child: DottedBorder(
+                              color: Colors.black,
+                              strokeWidth: 1,
+                              borderType: BorderType.RRect,
+                              child: TextFormField(
+                                textAlign: TextAlign.center,
+                                decoration: InputDecoration(
+                                  fillColor: Colors.white,
+                                  filled: true,
+                                  hintText: 'Enter Amount',
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      width: 1.0,
+                                      color: Colors.grey[200]
+                                    )
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Colors.grey[400],
+                                      width: 3.0
+                                    )
                                   )
                                 ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.grey[400],
-                                    width: 3.0
-                                  )
-                                )
+                                onChanged: (val){
+                                  setState(() {
+                                    money = val;
+                                  });
+                                },
                               ),
-                              onChanged: (val){
-                                setState(() {
-                                  money = val;
-                                });
-                              },
                             ),
                           ),
                           Center(
                             child: SizedBox(
                               width: 320,
-                              height: 65,
+                              height: 60,
                               child: FlatButton(
                                 onPressed: (){
                                   print(money);
                                 },
                                 color: Colors.black,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20.0)
+                                  borderRadius: BorderRadius.circular(30.0)
                                 ),
                                 child: Center(
                                   child: Text(
@@ -223,24 +228,23 @@ class _MoneyState extends State<Money> {
                               SizedBox(width: 10,)
                             ],
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
+                          SingleChildScrollView(
                             child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: DottedBorder(
+                                  strokeWidth: 1,
                                   color: Colors.black,
-                                  style: BorderStyle.values[1]
-                                )
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: withdraws.map((withdraw){
-                                  return WithDrawCard(withdraw: withdraw);
-                                }).toList(),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: withdraws.map((withdraw){
+                                      return WithDrawCard(withdraw: withdraw);
+                                    }).toList(),
+                                  ),
+                                ),
                               ),
                             ),
                           ),
-
                         ],
                       ),
                     )
@@ -259,7 +263,7 @@ class _MoneyState extends State<Money> {
                   },
                   color: Colors.blueAccent,
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0)
+                      borderRadius: BorderRadius.circular(30.0)
                   ),
                   child: Center(
                     child: Text(
