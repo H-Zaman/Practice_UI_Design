@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:image_picker/image_picker.dart';
 
 class AllProducts extends StatefulWidget {
@@ -14,6 +15,7 @@ class _AllProductsState extends State<AllProducts> {
   List<String> category = ['Large','Small','Medium'];
   String selectedCat;
   String textvalue;
+  bool zwitch = true;
 
   File _image;
   final ImagePicker picker = ImagePicker();
@@ -344,6 +346,91 @@ class _AllProductsState extends State<AllProducts> {
                             ),
                           ),
                         ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                height: 80,
+                width: MediaQuery.of(context).size.width,
+                child: Row(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(left: 23),
+                      child: Text(
+                        'AVAILABLE IN STOCK',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20
+                        ),
+                      ),
+                    ),
+                    Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 15),
+                      child: Transform.scale(
+                        scale: 1.5,
+                        child: Switch(
+                          value: zwitch,
+                          onChanged: (_){
+                            setState(() {
+                              zwitch = _;
+                            });
+                          },
+                          activeTrackColor: Colors.amber,
+                          activeColor: Colors.white,
+                          inactiveThumbColor: Colors.white,
+                          inactiveTrackColor: Colors.grey[700],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                height: 70,
+                width: MediaQuery.of(context).size.width,
+//                color: Colors.blueAccent,
+                child: Row(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(left: 23,right: 4,top: 5,bottom: 5),
+                      child: SizedBox(
+                        height: 70,width: MediaQuery.of(context).size.width / 2 - 30,
+                        child: FlatButton(
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                          color: Colors.red,
+                          onPressed: (){},
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Icon(Icons.delete,color: Colors.white,),
+                              Text('DELETE',
+                              style: TextStyle(
+                                color: Colors.white
+                              ),)
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 4,right: 23,top: 5,bottom: 5),
+                      child: SizedBox(
+                        height: 70,width: MediaQuery.of(context).size.width / 2 - 30,
+                        child: FlatButton(
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                          color: Colors.black,
+                          onPressed: (){},
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text('SAVE',style: TextStyle(color: Colors.white),),
+                              Icon(Icons.save,color: Colors.white,),
+                            ],
+                          ),
+                        ),
                       ),
                     )
                   ],
