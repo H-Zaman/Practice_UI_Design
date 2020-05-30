@@ -102,7 +102,6 @@ class _MoneyState extends State<Money> {
   @override
   Widget build(BuildContext context) {
 
-    double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
 
     return SafeArea(
@@ -219,8 +218,8 @@ class _MoneyState extends State<Money> {
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 4),
                             child: DottedBorder(
-                              color: Colors.black,
-                              strokeWidth: 1,
+                              color: Colors.grey,
+                              strokeWidth: .3,
                               borderType: BorderType.RRect,
                               child: TextFormField(
                                 textAlign: TextAlign.center,

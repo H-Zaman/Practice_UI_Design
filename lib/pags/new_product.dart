@@ -107,8 +107,8 @@ class _NewProductState extends State<NewProduct> {
                       SizedBox(height: 3,),
                       Center(
                         child: DottedBorder(
-                          strokeWidth: .5,
-                          color: Colors.black,
+                          strokeWidth: .3,
+                          color: Colors.grey,
                           child: Padding(
                             padding: const EdgeInsets.all(3.0),
                             child: Container(

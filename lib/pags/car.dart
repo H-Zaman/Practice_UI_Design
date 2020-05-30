@@ -78,7 +78,7 @@ class _CarState extends State<Car> {
                     SizedBox(height: 5,),
                     Expanded(
                       child: _image == null
-                          ? Text('No Image Selected')
+                          ? Center(child: Text('No Image Selected'))
                           : Image.file(_image),
                     ),
                     Row(
@@ -122,7 +122,7 @@ class _CarState extends State<Car> {
                     Center(
                       child: DottedBorder(
                         strokeWidth: .3,
-                        color: Colors.black,
+                        color: Colors.grey,
                         child: Padding(
                           padding: const EdgeInsets.all(3.0),
                           child: Container(
@@ -171,7 +171,7 @@ class _CarState extends State<Car> {
                     Center(
                       child: DottedBorder(
                         strokeWidth: .3,
-                        color: Colors.black,
+                        color: Colors.grey,
                         child: Padding(
                           padding: const EdgeInsets.all(3.0),
                           child: Container(
@@ -220,7 +220,7 @@ class _CarState extends State<Car> {
                     Center(
                       child: DottedBorder(
                         strokeWidth: .3,
-                        color: Colors.black,
+                        color: Colors.grey,
                         child: Padding(
                           padding: const EdgeInsets.all(3.0),
                           child: Container(
@@ -273,7 +273,7 @@ class _CarState extends State<Car> {
                             padding: const EdgeInsets.only(left: 5),
                             child: DottedBorder(
                               strokeWidth: .3,
-                              color: Colors.black,
+                              color: Colors.grey,
                               child: TextFormField(
                                 decoration: InputDecoration(
                                     fillColor: Colors.white,
@@ -319,7 +319,7 @@ class _CarState extends State<Car> {
                           ),
                           DottedBorder(
                             strokeWidth: .3,
-                            color: Colors.black,
+                            color: Colors.grey,
                             child: Padding(
                               padding: const EdgeInsets.all(4.0),
                               child: DropdownButton(
