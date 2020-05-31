@@ -324,7 +324,7 @@ class _MoneyState extends State<Money> {
                     ),
                     //load more
                     Container(
-                      margin: EdgeInsets.only(top:5),
+                      margin: EdgeInsets.only(top:3,bottom: 10),
                       child: SizedBox(
                         width: 320,
                         height: 65,
