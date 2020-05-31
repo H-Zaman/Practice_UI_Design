@@ -91,7 +91,7 @@ class _NewProductState extends State<NewProduct> {
                 Container(
                   //Category
                   width: screenWidth,
-                  height: screenHeight * .12,
+//                  height: screenHeight * .12,
 //                  color: Colors.red,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

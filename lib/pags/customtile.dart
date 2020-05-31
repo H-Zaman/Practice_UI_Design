@@ -63,7 +63,9 @@ class CustomTile extends StatelessWidget {
                           scale: 1.5,
                           child: Switch(
                             value: zwitch,
-                            onChanged: (_){},
+                            onChanged: (_){
+                              zwitch = _;
+                            },
                             activeTrackColor: Colors.amber,
                             activeColor: Colors.white,
                             inactiveThumbColor: Colors.white,
