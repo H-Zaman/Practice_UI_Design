@@ -9,6 +9,7 @@ class NewProduct extends StatefulWidget {
   _NewProductState createState() => _NewProductState();
 }
 
+
 class _NewProductState extends State<NewProduct> {
 
   List<String> dropdownItem = ['AA','BB','CC','DD'];
@@ -20,6 +21,9 @@ class _NewProductState extends State<NewProduct> {
     StockModel(name: 'Fanta',avalable: '53',details: 'Shitty Drink',price: '1.32',rating: '1'),
   ];
   String _dropSelectedItem;
+
+  bool zwitch = true;
+
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -139,13 +143,19 @@ class _NewProductState extends State<NewProduct> {
                     ],
                   ),
                 ),
-                SizedBox(height: 13,),
                 Container(
                   child: Expanded(
                     child: SingleChildScrollView(
                       child: Column(
                         children: stockItems.map((item){
-                          return CustomTile(stockModel: item);
+                          return zwitch ? CustomTile(
+                            stockModel: item,
+                            delete: (){
+                              setState(() {
+                                zwitch = false;
+                              });
+                            }
+                          ) : Text('nulll');
                         }).toList(),
                       ),
                     ),
@@ -159,3 +169,5 @@ class _NewProductState extends State<NewProduct> {
     );
   }
 }
+
+

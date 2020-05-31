@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 class CustomTile extends StatelessWidget {
   final StockModel stockModel;
-  CustomTile({this.stockModel});
+  final Function delete;
+  CustomTile({this.stockModel,this.delete});
   bool zwitch = true;
   @override
   Widget build(BuildContext context) {
@@ -64,7 +65,7 @@ class CustomTile extends StatelessWidget {
                           child: Switch(
                             value: zwitch,
                             onChanged: (_){
-                              zwitch = _;
+                              delete;
                             },
                             activeTrackColor: Colors.amber,
                             activeColor: Colors.white,
