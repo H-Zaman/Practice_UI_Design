@@ -1,6 +1,4 @@
 import 'package:dotted_border/dotted_border.dart';
-import 'package:examflutterapp/pags/customtile.dart';
-import 'package:examflutterapp/pags/models/stockitems.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
