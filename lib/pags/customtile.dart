@@ -45,7 +45,7 @@ class CustomTile extends StatelessWidget {
                           ),
                           Text(
                             'Rating ${stockModel.rating}'
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -57,7 +57,7 @@ class CustomTile extends StatelessWidget {
                           '\$${stockModel.price}',
                           style: TextStyle(
                             color: Colors.redAccent,
-                            fontSize: 18
+                            fontSize: 18,
                           ),
                         ),
                         Transform.scale(
@@ -65,7 +65,7 @@ class CustomTile extends StatelessWidget {
                           child: Switch(
                             value: zwitch,
                             onChanged: (_){
-                              delete;
+                              zwitch = _;
                             },
                             activeTrackColor: Colors.amber,
                             activeColor: Colors.white,
@@ -87,7 +87,9 @@ class CustomTile extends StatelessWidget {
                       'Available: ${stockModel.avalable}'
                     ),
                     FlatButton(
-                      onPressed: (){},
+                      onPressed: (){
+                        zwitch ? print('true') : print('false');
+                      },
                       color: Colors.white,
                       child: Row(
                         children: <Widget>[

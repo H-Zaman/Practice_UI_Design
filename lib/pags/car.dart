@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +23,7 @@ class _CarState extends State<Car> {
   String selectedfuel;
   String regnumber;
   bool dateSelected = false;
-  String date;
+  String dor,dom;
 
   File _image;
   final ImagePicker picker = ImagePicker();
@@ -376,7 +375,7 @@ class _CarState extends State<Car> {
                             children: <Widget>[
                               SizedBox(width: 15,),
                               Text(
-                                dateSelected ? date : DateFormat.yMMMd().format(DateTime.now()),
+                                dateSelected ? dom : DateFormat.yMMMd().format(DateTime.now()),
                               ),
                               IconButton(
                                 icon: Icon(Icons.date_range),
@@ -389,7 +388,7 @@ class _CarState extends State<Car> {
                                   ).then((onValue){
                                     setState(() {
                                       dateSelected = true;
-                                      date = DateFormat.yMMMd().format(onValue);
+                                      dom = DateFormat.yMMMd().format(onValue);
                                     });
                                   });
                                 },
@@ -415,7 +414,7 @@ class _CarState extends State<Car> {
                             children: <Widget>[
                               SizedBox(width: 15,),
                               Text(
-                                dateSelected ? date : DateFormat.yMMMd().format(DateTime.now()),
+                                dateSelected ? dor : DateFormat.yMMMd().format(DateTime.now()),
                               ),
                               IconButton(
                                 icon: Icon(Icons.date_range),
@@ -428,7 +427,7 @@ class _CarState extends State<Car> {
                                   ).then((onValue){
                                     setState(() {
                                       dateSelected = true;
-                                      date = DateFormat.yMMMd().format(onValue);
+                                      dor = DateFormat.yMMMd().format(onValue);
                                     });
                                   });
                                 },

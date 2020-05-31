@@ -22,8 +22,6 @@ class _NewProductState extends State<NewProduct> {
   ];
   String _dropSelectedItem;
 
-  bool zwitch = true;
-
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -148,14 +146,9 @@ class _NewProductState extends State<NewProduct> {
                     child: SingleChildScrollView(
                       child: Column(
                         children: stockItems.map((item){
-                          return zwitch ? CustomTile(
+                          return CustomTile(
                             stockModel: item,
-                            delete: (){
-                              setState(() {
-                                zwitch = false;
-                              });
-                            }
-                          ) : Text('nulll');
+                          );
                         }).toList(),
                       ),
                     ),
