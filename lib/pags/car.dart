@@ -127,21 +127,23 @@ class _CarState extends State<Car> {
                           padding: const EdgeInsets.all(3.0),
                           child: Container(
                             width: screenWidth - 50,
-                            child: DropdownButton(
-                              elevation: 0,
-                              hint: Text('Please Choose a Category'),
-                              value: selectedTransport,
-                              onChanged: (val){
-                                setState(() {
-                                  selectedTransport = val;
-                                });
-                              },
-                              items: transport.map((item){
-                                return DropdownMenuItem(
-                                  child: new Text(item),
-                                  value: item,
-                                );
-                              }).toList(),
+                            child: DropdownButtonHideUnderline(
+                              child: DropdownButton(
+                                elevation: 0,
+                                hint: Text('Please Choose a Category'),
+                                value: selectedTransport,
+                                onChanged: (val){
+                                  setState(() {
+                                    selectedTransport = val;
+                                  });
+                                },
+                                items: transport.map((item){
+                                  return DropdownMenuItem(
+                                    child: new Text(item),
+                                    value: item,
+                                  );
+                                }).toList(),
+                              ),
                             ),
                           ),
                         ),
@@ -176,21 +178,23 @@ class _CarState extends State<Car> {
                           padding: const EdgeInsets.all(3.0),
                           child: Container(
                             width: screenWidth - 50,
-                            child: DropdownButton(
-                              elevation: 0,
-                              hint: Text('Please Choose a Category'),
-                              value: selectedModel,
-                              onChanged: (val){
-                                setState(() {
-                                  selectedModel = val;
-                                });
-                              },
-                              items: model.map((item){
-                                return DropdownMenuItem(
-                                  child: new Text(item),
-                                  value: item,
-                                );
-                              }).toList(),
+                            child: DropdownButtonHideUnderline(
+                              child: DropdownButton(
+                                elevation: 0,
+                                hint: Text('Please Choose a Category'),
+                                value: selectedModel,
+                                onChanged: (val){
+                                  setState(() {
+                                    selectedModel = val;
+                                  });
+                                },
+                                items: model.map((item){
+                                  return DropdownMenuItem(
+                                    child: new Text(item),
+                                    value: item,
+                                  );
+                                }).toList(),
+                              ),
                             ),
                           ),
                         ),
@@ -225,21 +229,23 @@ class _CarState extends State<Car> {
                           padding: const EdgeInsets.all(3.0),
                           child: Container(
                             width: screenWidth - 50,
-                            child: DropdownButton(
-                              elevation: 0,
-                              hint: Text('Please Choose a Category'),
-                              value: selectedColor,
-                              onChanged: (val){
-                                setState(() {
-                                  selectedColor = val;
-                                });
-                              },
-                              items: color.map((item){
-                                return DropdownMenuItem(
-                                  child: new Text(item),
-                                  value: item,
-                                );
-                              }).toList(),
+                            child: DropdownButtonHideUnderline(
+                              child: DropdownButton(
+                                elevation: 0,
+                                hint: Text('Please Choose a Category'),
+                                value: selectedColor,
+                                onChanged: (val){
+                                  setState(() {
+                                    selectedColor = val;
+                                  });
+                                },
+                                items: color.map((item){
+                                  return DropdownMenuItem(
+                                    child: new Text(item),
+                                    value: item,
+                                  );
+                                }).toList(),
+                              ),
                             ),
                           ),
                         ),
@@ -322,22 +328,24 @@ class _CarState extends State<Car> {
                             color: Colors.grey,
                             child: Padding(
                               padding: const EdgeInsets.all(4.0),
-                              child: DropdownButton(
-                                isExpanded: true,
-                                elevation: 0,
-                                hint: Text('Fuel type'),
-                                value: selectedfuel,
-                                onChanged: (val){
-                                  setState(() {
-                                    selectedfuel = val;
-                                  });
-                                },
-                                items: fuel.map((item){
-                                  return DropdownMenuItem(
-                                    child: new Text(item),
-                                    value: item,
-                                  );
-                                }).toList(),
+                              child: DropdownButtonHideUnderline(
+                                child: DropdownButton(
+                                  isExpanded: true,
+                                  elevation: 0,
+                                  hint: Text('Fuel type'),
+                                  value: selectedfuel,
+                                  onChanged: (val){
+                                    setState(() {
+                                      selectedfuel = val;
+                                    });
+                                  },
+                                  items: fuel.map((item){
+                                    return DropdownMenuItem(
+                                      child: new Text(item),
+                                      value: item,
+                                    );
+                                  }).toList(),
+                                ),
                               ),
                             ),
                           ),

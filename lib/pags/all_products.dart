@@ -103,21 +103,23 @@ class _AllProductsState extends State<AllProducts> {
                           padding: const EdgeInsets.all(3.0),
                           child: Container(
                             width: MediaQuery.of(context).size.width - 50,
-                            child: DropdownButton(
-                              elevation: 0,
-                              hint: Text('Please Choose a Category'),
-                              value: selectedCat,
-                              onChanged: (val){
-                                setState(() {
-                                  selectedCat = val;
-                                });
-                              },
-                              items: category.map((item){
-                                return DropdownMenuItem(
-                                  child: new Text(item),
-                                  value: item,
-                                );
-                              }).toList(),
+                            child: DropdownButtonHideUnderline(
+                              child: DropdownButton(
+                                elevation: 0,
+                                hint: Text('Please Choose a Category'),
+                                value: selectedCat,
+                                onChanged: (val){
+                                  setState(() {
+                                    selectedCat = val;
+                                  });
+                                },
+                                items: category.map((item){
+                                  return DropdownMenuItem(
+                                    child: new Text(item),
+                                    value: item,
+                                  );
+                                }).toList(),
+                              ),
                             ),
                           ),
                         ),
@@ -279,6 +281,7 @@ class _AllProductsState extends State<AllProducts> {
                               strokeWidth: .3,
                               color: Colors.grey,
                               child: TextFormField(
+                                keyboardType: TextInputType.number,
                                 decoration: InputDecoration(
                                     fillColor: Colors.white,
                                     filled: true,
@@ -321,6 +324,7 @@ class _AllProductsState extends State<AllProducts> {
                             strokeWidth: .3,
                             color: Colors.grey,
                             child: TextFormField(
+                              keyboardType: TextInputType.number,
                               decoration: InputDecoration(
                                   fillColor: Colors.white,
                                   filled: true,

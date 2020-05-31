@@ -26,15 +26,16 @@ class _NewProductState extends State<NewProduct> {
     double screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(
+        body: Container(
+          //main
+          height: screenHeight,
+          width: screenWidth,
           child: Container(
-            //main
-            height: screenHeight,
-            width: screenWidth,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  //produt details
+                  //product details
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
@@ -61,7 +62,7 @@ class _NewProductState extends State<NewProduct> {
                 ),
                 Divider(color: Colors.amber,height: 2,),
                 Container(
-                  //Addnew product
+                  //Add new product
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SizedBox(
@@ -98,7 +99,7 @@ class _NewProductState extends State<NewProduct> {
                       Padding(
                         padding: const EdgeInsets.only(top: 8,left: 23),
                         child: Text(
-                          'Catergory',
+                          'Category',
                           style: TextStyle(
                             fontSize: 15
                           ),
@@ -113,21 +114,23 @@ class _NewProductState extends State<NewProduct> {
                             padding: const EdgeInsets.all(3.0),
                             child: Container(
                               width: screenWidth - 50,
-                              child: DropdownButton(
-                                elevation: 0,
-                                hint: Text('Please Choose a Category'),
-                                value: _dropSelectedItem,
-                                onChanged: (val){
-                                  setState(() {
-                                    _dropSelectedItem = val;
-                                  });
-                                },
-                                items: dropdownItem.map((item){
-                                  return DropdownMenuItem(
-                                    child: new Text(item),
-                                    value: item,
-                                  );
-                                }).toList(),
+                              child: DropdownButtonHideUnderline(
+                                child: DropdownButton(
+                                  elevation: 0,
+                                  hint: Text('Please Choose a Category'),
+                                  value: _dropSelectedItem,
+                                  onChanged: (val){
+                                    setState(() {
+                                      _dropSelectedItem = val;
+                                    });
+                                  },
+                                  items: dropdownItem.map((item){
+                                    return DropdownMenuItem(
+                                      child: new Text(item),
+                                      value: item,
+                                    );
+                                  }).toList(),
+                                ),
                               ),
                             ),
                           ),
@@ -136,12 +139,15 @@ class _NewProductState extends State<NewProduct> {
                     ],
                   ),
                 ),
-                Expanded(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: stockItems.map((item){
-                        return CustomTile(stockModel: item);
-                      }).toList(),
+                SizedBox(height: 13,),
+                Container(
+                  child: Expanded(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: stockItems.map((item){
+                          return CustomTile(stockModel: item);
+                        }).toList(),
+                      ),
                     ),
                   ),
                 )
